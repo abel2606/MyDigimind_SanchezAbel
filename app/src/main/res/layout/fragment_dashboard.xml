@@ -25,6 +25,7 @@
         />
 
     <EditText
+        android:id="@+id/editTexto"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/take_my_pill"
@@ -49,6 +50,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chkmon"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -63,6 +65,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chktue"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -77,6 +80,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chkwed"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -91,6 +95,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chkthu"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -105,6 +110,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chkfri"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -119,6 +125,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chksatu"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -133,6 +140,7 @@
                 />
 
             <CheckBox
+                android:id="@+id/chksun"
                 android:layout_width="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_height="wrap_content"/>
@@ -147,29 +155,16 @@
             />
 
         <Button
+            android:id="@+id/btnRecordatorio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/set_time"
             android:background="?android:attr/selectableItemBackground"
             />
-
     </TableLayout>
 
 
 
 
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </LinearLayout>
