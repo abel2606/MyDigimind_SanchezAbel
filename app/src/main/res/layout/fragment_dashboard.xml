@@ -155,11 +155,21 @@
             />
 
         <Button
-            android:id="@+id/btnRecordatorio"
+            android:id="@+id/btn_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/set_time"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:textColor="@color/Gray"
             android:background="?android:attr/selectableItemBackground"
+            />
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
             />
     </TableLayout>
 
