@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -8,6 +8,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <ImageView
         android:layout_width="match_parent"
@@ -25,7 +30,7 @@
         />
 
     <EditText
-        android:id="@+id/editTexto"
+        android:id="@+id/et_titulo"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="@string/take_my_pill"
@@ -169,12 +174,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
+            android:text="DONE"
+            android:layout_marginBottom="80dp"
             />
     </TableLayout>
 
 
 
+    </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>

@@ -16,8 +16,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import sanchez.abel.mydigimind_sanchezabel.R
 import sanchez.abel.mydigimind_sanchezabel.databinding.FragmentDashboardBinding
-import sanchez.abel.mydigimind_sanchezabel.ui.Recordatorio
-import sanchez.abel.mydigimind_sanchezabel.ui.RecordatorioViewModel
+import sanchez.abel.mydigimind_sanchezabel.ui.Task
+import sanchez.abel.mydigimind_sanchezabel.ui.home.HomeFragment
 import java.text.SimpleDateFormat
 import java.util.Calendar
 
@@ -51,6 +51,44 @@ class DashboardFragment : Fragment() {
             }
             TimePickerDialog(root.context, timeSetListener,cal.get(Calendar.HOUR_OF_DAY),
                 cal.get(Calendar.MINUTE), true).show()
+        }
+
+        val btn_save: Button = root.findViewById(R.id.btn_save)
+        val et_titulo: EditText = root.findViewById(R.id.et_titulo)
+        val checkMonday: CheckBox = root.findViewById(R.id.chkmon)
+        val checkTuesday: CheckBox = root.findViewById(R.id.chktue)
+        val checkWednesday: CheckBox = root.findViewById(R.id.chkwed)
+        val checkThursday: CheckBox = root.findViewById(R.id.chkthu)
+        val checkFriday: CheckBox = root.findViewById(R.id.chkfri)
+        val checkSaturday: CheckBox = root.findViewById(R.id.chksatu)
+        val checkSunday: CheckBox = root.findViewById(R.id.chksun)
+
+        btn_save.setOnClickListener {
+            var title = et_titulo.text.toString()
+            var time = btn_time.text.toString()
+            var days = ArrayList<String>()
+
+            if(checkMonday.isChecked)
+                days.add("Monday")
+            if(checkTuesday.isChecked)
+                days.add("Tuesday")
+            if(checkWednesday.isChecked)
+                days.add("Wednesday")
+            if(checkThursday.isChecked)
+                days.add("Thursday")
+            if(checkFriday.isChecked)
+                days.add("Friday")
+            if(checkSaturday.isChecked)
+                days.add("Saturday")
+            if(checkSunday.isChecked)
+                days.add("Sunday")
+
+            var task = Task(title, days, time)
+
+            HomeFragment.tasks.add(task)
+
+            Toast.makeText(root.context, "new task added", Toast.LENGTH_SHORT).show()
+
         }
         return root
     }

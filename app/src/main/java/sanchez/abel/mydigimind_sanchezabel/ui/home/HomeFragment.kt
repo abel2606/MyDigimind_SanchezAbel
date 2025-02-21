@@ -14,15 +14,19 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import sanchez.abel.mydigimind_sanchezabel.R
 import sanchez.abel.mydigimind_sanchezabel.databinding.FragmentHomeBinding
-import sanchez.abel.mydigimind_sanchezabel.ui.RecordatorioViewModel
 import sanchez.abel.mydigimind_sanchezabel.ui.Task
 import sanchez.abel.mydigimind_sanchezabel.ui.dashboard.DashboardViewModel
 
 class HomeFragment : Fragment() {
 
-    var tasks = ArrayList<Task>()
+
     private var adaptador: AdaptadorTareas? = null
     private lateinit var  homeViewModel: HomeViewModel
+
+    companion object{
+        var tasks = ArrayList<Task>()
+        var first = true
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,7 +35,11 @@ class HomeFragment : Fragment() {
         homeViewModel=
             ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        fillTasks()
+        if(first){
+            fillTasks()
+            first = false
+        }
+
 
         adaptador = AdaptadorTareas(root.context, tasks)
 
@@ -43,13 +51,13 @@ class HomeFragment : Fragment() {
 
     fun fillTasks(){
         tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
-        tasks.add(Task("Practice 1", arrayListOf("Monday", "Sunday"),"17:30"))
+        tasks.add(Task("Practice 2", arrayListOf("Tuesday", "Sunday"),"18:30"))
+        tasks.add(Task("Practice 3", arrayListOf("Monday", "Sunday"),"01:30"))
+        tasks.add(Task("Practice 4", arrayListOf("Friday", "Sunday"),"17:30"))
+        tasks.add(Task("Practice 5", arrayListOf("Monday", "Sunday"),"12:30"))
+        tasks.add(Task("Practice 6", arrayListOf("Monday","Saturday", "Sunday"),"17:30"))
+        tasks.add(Task("Practice 7", arrayListOf("Monday", "Sunday"),"17:30"))
+        tasks.add(Task("Practice 8", arrayListOf("Monday", "Sunday"),"16:30"))
     }
 
     private class AdaptadorTareas: BaseAdapter{
